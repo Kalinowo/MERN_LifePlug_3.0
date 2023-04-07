@@ -1,0 +1,102 @@
+.welcomeOuter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  .backgroundImageOuter {
+    position: relative;
+    width: 80%;
+    height: auto;
+    .container {
+      img {
+        filter: grayscale(30%);
+        width: 100%;
+        height: 100%;
+      }
+      .cardOuter {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: absolute;
+        top: 25%;
+        left: 25%;
+        transform: translate(-50%, -50%);
+        width: 50%;
+        height: 50%;
+        transform: scale(80%);
+        .cardContainer {
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          background: rgba(0, 0, 0, 0.5);
+          border-radius: 10px;
+          width: 100%;
+          height: 80%;
+          .cardTextWrapper {
+            .text {
+              font-size: 12vw;
+              line-height: 12vw;
+              text-align: center;
+              color: rgb(187, 255, 180);
+              filter: drop-shadow(0px 0px 10px black);
+            }
+          }
+          .loginChargerContainer {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            border: none;
+            border-radius: 8px;
+            overflow: hidden;
+            .loginChargerText {
+              font-size: 3vw;
+              line-height: 3px;
+            }
+            button {
+              position: absolute;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              background: transparent;
+              border: solid black;
+              border-radius: 8px;
+              overflow: hidden;
+              z-index: 1;
+              cursor: pointer;
+            }
+            &::after {
+              position: absolute;
+              top: 0;
+              left: 0;
+              content: "";
+              width: 100%;
+              height: 100%;
+              background: rgba(83, 250, 83, 0.8);
+              border: none;
+              border-radius: 8px;
+              transform: translateX(-100%);
+              transition: 3s;
+            }
+            &[data-pop="true"]::after {
+              transform: none;
+            }
+            &:hover::after {
+              transform: none;
+            }
+            &:hover .loginChargerText {
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.loginChargerContainer[data-pop="true"] {
+  height: 0%;
+}

@@ -1,0 +1,83 @@
+.authenticateModal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(128, 128, 128, 0.5);
+  z-index: 100;
+  .successAlertModal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(128, 128, 128, 0.5);
+    z-index: 100;
+    .sucessAlertOuter {
+      width: 100%;
+      background: lightgray;
+      text-align: center;
+      padding: 5px;
+    }
+  }
+
+  .formOuter {
+    width: 300px;
+    height: auto;
+    background: white;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    border: solid black 5px;
+    .formSelect {
+      display: flex;
+      flex-direction: row;
+      height: 50px;
+      width: 100%;
+      flex-wrap: nowrap;
+      background: rgb(165, 165, 165);
+      border-radius: 5px 5px 0px 0px;
+      overflow: hidden;
+      button {
+        display: block;
+        width: 20%;
+        border: none;
+        white-space: nowrap;
+        background: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+//Login
+.formContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  .formTitle {
+    margin-top: 20px;
+    font-size: 30px;
+    line-height: 30px;
+  }
+  input {
+    width: 80%;
+    padding: 0px 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    height: 30px;
+  }
+  .submitBtnContainer {
+    margin-top: 5px;
+    display: flex;
+    width: 100%;
+  }
+}
