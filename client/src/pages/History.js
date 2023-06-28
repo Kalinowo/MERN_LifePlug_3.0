@@ -38,49 +38,7 @@ export default function History() {
   const { watchHistory, animeData } = useLoaderData();
   const { currentUser, setCurrentUser, theme } =
     React.useContext(GlobalContext);
-  // let [watchHistory, setWatchHistory] = React.useState(watchHistoryLoader);
-  // let [animeData, setAnimeData] = React.useState(null);
   let navigate = useNavigate();
-
-  // React.useEffect(() => {
-  //   if (!currentUser) {
-  //     return;
-  //   }
-
-  //   let _id = currentUser.user._id;
-  //   HistoryService.getHistory(_id)
-  //     .then((data) => {
-  //       if (data.data === "資料遭到串改") {
-  //         setCurrentUser(null);
-  //         localStorage.removeItem("user");
-  //         navigate("/", { replace: true });
-  //       } else {
-  //         setWatchHistory(
-  //           data.data.sort((a, b) =>
-  //             Date.parse(a.date) < Date.parse(b.date) ? 1 : -1
-  //           )
-  //         );
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  //   //eslint-disable-next-line
-  // }, []);
-
-  // React.useEffect(() => {
-  //   AnimeService.getEveryAnime()
-  //     .then((data) => {
-  //       setAnimeData(data.data);
-  //     })
-  //     .catch((err) => {
-  //       if (err.response.data === "Unauthorized") {
-  //         setCurrentUser(null);
-  //         localStorage.removeItem("user");
-  //         navigate("/", { replace: true });
-  //       }
-  //     });
-  // }, []);
 
   const toHHMMSS = (time) => {
     var sec_num = parseInt(time, 10); // don't forget the second param

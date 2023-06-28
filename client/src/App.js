@@ -22,18 +22,16 @@ function App() {
       <>
         <Route path="/" element={<RootLayout />}>
           <Route index element={<Welcome />}></Route>
-          <Route path="/LifePlug" element={<Navbar />}>
-            <Route
-              index
-              element={<Home />}
-              loader={homeDataLoader}
-              // errorElement={<Redirect />}
-            ></Route>
+          <Route
+            path="/LifePlug"
+            element={<Navbar />}
+            // errorElement={<Redirect />}
+          >
+            <Route index element={<Home />} loader={homeDataLoader}></Route>
             <Route
               path="profile"
               element={<Profile />}
               loader={profileDataLoader}
-              // errorElement={<Redirect />}
             ></Route>
             <Route
               path="video/:id/:episode"
@@ -44,7 +42,6 @@ function App() {
               path="history"
               element={<History />}
               loader={historyDataLoader}
-              // errorElement={<Redirect />}
             ></Route>
           </Route>
         </Route>

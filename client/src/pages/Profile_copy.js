@@ -24,45 +24,33 @@ export async function profileDataLoader() {
   return defer({ profileData: getProfile() });
 }
 
+export async function profileAction({ request }) {
+  let formData = await request.formData();
+  let updatedName = Object.fromEntries(formData);
+  let user_id = JSON.parse(localStorage.getItem("user")).user._id;
+
+  await ProfileService.updateName(user_id, updatedName.nickname).then((res) => {
+    let update = JSON.parse(localStorage.getItem("user"));
+    let change = { ...update.user, nickname: updatedName };
+
+    localStorage.setItem("user", JSON.stringify({ ...update, user: change }));
+  });
+
+  return updatedName.nickname;
+}
+
 export default function Profile() {
   const { profileData } = useLoaderData();
   const { currentUser, setCurrentUser, pop, setPop, theme } =
     React.useContext(GlobalContext);
   const [updateNameBtn, setUpdateNameBtn] = React.useState(false);
   const [updateName, setUpdateName] = React.useState("");
-  const [editedName, setEditedName] = React.useState(null);
   const [editedDp, setEditedDp] = React.useState(null);
   let navigate = useNavigate();
 
   function updateNameTrigger() {
     setUpdateNameBtn(!updateNameBtn);
   }
-
-  const updatedName = () => {
-    let user_id = currentUser.user._id;
-    let nickname = updateName;
-    ProfileService.updateName(user_id, nickname)
-      .then((res) => {
-        if (res.data === "資料遭到串改") {
-          setCurrentUser(null);
-          localStorage.removeItem("user");
-          navigate("/", { replace: true });
-        }
-        let update = JSON.parse(localStorage.getItem("user"));
-        let change = { ...update.user, nickname: updateName };
-
-        localStorage.setItem(
-          "user",
-          JSON.stringify({ ...update, user: change })
-        );
-        setEditedName(updateName);
-        setUpdateName("");
-        setUpdateNameBtn(false);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
 
   return (
     <React.Fragment>
@@ -101,9 +89,7 @@ export default function Profile() {
                         <div className="profileName">
                           名稱：
                           <span className="name">
-                            {editedName
-                              ? editedName
-                              : loadedProfile[0].nickname}
+                            {loadedProfile[0].nickname}
                           </span>
                           <CustomButton
                             children={
@@ -112,23 +98,10 @@ export default function Profile() {
                             onClick={updateNameTrigger}
                           />
                         </div>
+                        {/* hi */}
                         {updateNameBtn && (
-                          <div
-                            className="updateNameOuter"
-                            onSubmit={(e) => e.preventDefault()}
-                          >
-                            <div className="updateNameContainer">
-                              <input
-                                className="updateForm"
-                                value={updateName}
-                                onChange={(e) => setUpdateName(e.target.value)}
-                                placeholder="請輸入名稱..."
-                              />
-                              <CustomButton
-                                children="OK"
-                                onClick={updatedName}
-                              />
-                            </div>
+                          <div className="updateNameOuter">
+                            <NameField setUpdateNameBtn={setUpdateNameBtn} />
                           </div>
                         )}
                         <div className="profileName">
@@ -144,5 +117,28 @@ export default function Profile() {
         </div>
       </div>
     </React.Fragment>
+  );
+}
+
+function NameField({ setUpdateNameBtn }) {
+  const fetcher = useFetcher();
+  function closeBtn() {
+    console.log("hi");
+  }
+  if (fetcher.formData) {
+    console.log(fetcher.formData.get("nickname"));
+  }
+  return (
+    <>
+      <fetcher.Form method="post" className="updateNameContainer">
+        <input
+          type="text"
+          className="updateForm"
+          name="nickname"
+          placeholder="請輸入名稱..."
+        />
+        <CustomButton children="OK" onClick={() => closeBtn()} />
+      </fetcher.Form>
+    </>
   );
 }

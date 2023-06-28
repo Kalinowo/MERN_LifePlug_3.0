@@ -103,7 +103,7 @@ export default function Navbar() {
                     as="a"
                     to={item.href}
                     className={classNames(
-                      item.current
+                      item.current === location.pathname
                         ? "bg-gray-900 text-white"
                         : "text-black hover:bg-gray-700 hover:text-white",
                       "block rounded-md px-3 py-2 text-base font-medium"

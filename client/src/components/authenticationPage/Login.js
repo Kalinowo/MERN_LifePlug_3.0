@@ -50,7 +50,7 @@ export default function Login() {
     <>
       <form className="formContent" onSubmit={onSubmit}>
         <div className="formTitle">會員登入</div>
-        <input ref={emailRef} type="  email" placeholder="E-mail"></input>
+        <input ref={emailRef} type="email" placeholder="E-mail"></input>
         <input ref={passwordRef} type="password" placeholder="Password"></input>
         {message && <div className="text-red">{message}</div>}
         <div className="submitBtnContainer">
