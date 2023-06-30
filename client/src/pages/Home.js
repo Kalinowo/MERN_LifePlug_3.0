@@ -68,18 +68,20 @@ export default function Home() {
                     data={searchValue}
                   />
                 )}
-                {currentUser && currentUser.user.role === "Admin" && (
-                  <div className="postNewAnimeBtnOuter">
-                    <CustomButton
-                      children="Post Anime"
-                      width="90%"
-                      height="45px"
-                      fontSize="35px"
-                      lineHeight="50px"
-                      onClick={() => setPop(true)}
-                    />
-                  </div>
-                )}
+                {!searchValue &&
+                  currentUser &&
+                  currentUser.user.role === "Admin" && (
+                    <div className="postNewAnimeBtnOuter">
+                      <CustomButton
+                        children="Post Anime"
+                        width="90%"
+                        height="45px"
+                        fontSize="35px"
+                        lineHeight="50px"
+                        onClick={() => setPop(true)}
+                      />
+                    </div>
+                  )}
                 {!searchValue &&
                   loadedData.orderYear &&
                   loadedData.orderYear

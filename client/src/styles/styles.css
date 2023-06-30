@@ -367,13 +367,13 @@ button:focus-visible {
 .homeOuter .homeInner .animeSeasonOuter .animeSeasonInner .seasonTitle {
   color: var(--text-primary);
 }
-.homeOuter .homeInner .animeSeasonOuter .animeSeasonInner .animeSeasonContainer {
+.homeOuter .homeInner .animeSeasonOuter .animeSeasonContainer {
   display: flex;
   position: relative;
   flex-direction: row;
   flex-wrap: wrap;
 }
-.homeOuter .homeInner .animeSeasonOuter .animeSeasonInner .animeSeasonContainer .animeContainer {
+.homeOuter .homeInner .animeSeasonOuter .animeSeasonContainer .animeContainer {
   display: flex;
   position: relative;
   width: calc(20% - 16px);
@@ -387,19 +387,19 @@ button:focus-visible {
   overflow: hidden;
 }
 @media (max-width: 768px) {
-  .homeOuter .homeInner .animeSeasonOuter .animeSeasonInner .animeSeasonContainer .animeContainer {
+  .homeOuter .homeInner .animeSeasonOuter .animeSeasonContainer .animeContainer {
     width: calc(33% - 14px);
   }
 }
 @media (max-width: 600px) {
-  .homeOuter .homeInner .animeSeasonOuter .animeSeasonInner .animeSeasonContainer .animeContainer {
+  .homeOuter .homeInner .animeSeasonOuter .animeSeasonContainer .animeContainer {
     width: calc(50% - 16px);
   }
 }
-.homeOuter .homeInner .animeSeasonOuter .animeSeasonInner .animeSeasonContainer .animeContainer:hover {
+.homeOuter .homeInner .animeSeasonOuter .animeSeasonContainer .animeContainer:hover {
   box-shadow: 0px 0px 6px 2px white;
 }
-.homeOuter .homeInner .animeSeasonOuter .animeSeasonInner .animeSeasonContainer .animeContainer .animeImgContainer {
+.homeOuter .homeInner .animeSeasonOuter .animeSeasonContainer .animeContainer .animeImgContainer {
   position: relative;
   padding-bottom: 55%;
   border-radius: 5px 5px 0 0;
@@ -407,7 +407,7 @@ button:focus-visible {
   height: 0;
   overflow: hidden;
 }
-.homeOuter .homeInner .animeSeasonOuter .animeSeasonInner .animeSeasonContainer .animeContainer .animeImgContainer .img {
+.homeOuter .homeInner .animeSeasonOuter .animeSeasonContainer .animeContainer .animeImgContainer .img {
   position: absolute;
   left: 0;
   width: 100%;
@@ -415,7 +415,7 @@ button:focus-visible {
   transition: 0.5s;
   transform: scale(1.08);
 }
-.homeOuter .homeInner .animeSeasonOuter .animeSeasonInner .animeSeasonContainer .animeContainer .animeImgContainer .latestEpisode {
+.homeOuter .homeInner .animeSeasonOuter .animeSeasonContainer .animeContainer .animeImgContainer .latestEpisode {
   position: absolute;
   top: 0;
   left: 4px;
@@ -427,7 +427,7 @@ button:focus-visible {
   padding: 0 5px 0 5px;
   border-radius: 5px;
 }
-.homeOuter .homeInner .animeSeasonOuter .animeSeasonInner .animeSeasonContainer .animeContainer .animeImgContainer .viewsContainer {
+.homeOuter .homeInner .animeSeasonOuter .animeSeasonContainer .animeContainer .animeImgContainer .viewsContainer {
   display: flex;
   position: absolute;
   bottom: 0;
@@ -440,12 +440,12 @@ button:focus-visible {
   padding: 0 5px 0 5px;
   border-radius: 5px;
 }
-.homeOuter .homeInner .animeSeasonOuter .animeSeasonInner .animeSeasonContainer .animeContainer .animeImgContainer .viewsContainer .views {
+.homeOuter .homeInner .animeSeasonOuter .animeSeasonContainer .animeContainer .animeImgContainer .viewsContainer .views {
   position: relative;
   top: 1px;
   margin-left: 5px;
 }
-.homeOuter .homeInner .animeSeasonOuter .animeSeasonInner .animeSeasonContainer .animeContainer .animeNameContainer {
+.homeOuter .homeInner .animeSeasonOuter .animeSeasonContainer .animeContainer .animeNameContainer {
   display: flex;
   flex-direction: column;
   border-radius: 0 0 5px 5px;
@@ -457,15 +457,15 @@ button:focus-visible {
   font-weight: bold;
   padding: 0 5px 0;
 }
-.homeOuter .homeInner .animeSeasonOuter .animeSeasonInner .animeSeasonContainer .animeContainer .animeNameContainer .name,
-.homeOuter .homeInner .animeSeasonOuter .animeSeasonInner .animeSeasonContainer .animeContainer .animeNameContainer .scroll {
+.homeOuter .homeInner .animeSeasonOuter .animeSeasonContainer .animeContainer .animeNameContainer .name,
+.homeOuter .homeInner .animeSeasonOuter .animeSeasonContainer .animeContainer .animeNameContainer .scroll {
   height: 25px;
   line-height: 30px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.homeOuter .homeInner .animeSeasonOuter .animeSeasonInner .animeSeasonContainer .animeContainer .animeNameContainer:hover > .scroll {
+.homeOuter .homeInner .animeSeasonOuter .animeSeasonContainer .animeContainer .animeNameContainer:hover > .scroll {
   width: 100%;
   overflow: visible;
   animation: scrollingText linear 6s infinite forwards, point2 linear 6s 6s infinite forwards;
@@ -486,10 +486,10 @@ button:focus-visible {
     animation: scrollingText linear 6s infinite forwards;
   }
 }
-.homeOuter .homeInner .animeSeasonOuter .animeSeasonInner .animeSeasonContainer .animeContainer:hover .img {
+.homeOuter .homeInner .animeSeasonOuter .animeSeasonContainer .animeContainer:hover .img {
   transform: scale(1.15);
 }
-.homeOuter .homeInner .animeSeasonOuter .animeSeasonInner .animeSeasonContainer .animeContainer .styledBlur {
+.homeOuter .homeInner .animeSeasonOuter .animeSeasonContainer .animeContainer .styledBlur {
   position: absolute;
   top: 0;
   width: 100%;
